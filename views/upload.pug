@@ -1,12 +1,21 @@
 extends layout
 
 block content
-  form.upload-form(method="POST" enctype="multipart/form-data" name="fileinfo" id="fileinfo" )
-    input#file(type="file" value="Choose files" name="files" accept="image/jpeg,image/png" 
-    multiple="true" hidden)
-    label.upload-file-label(for="file") Choose Files
-    span(id="file-chosen") No file chosen
-    button Submit
+  .upload-content
+    form.upload-form(method="POST" enctype="multipart/form-data" name="fileinfo" id="fileinfo" )
 
-  if(err)
-    p.error-message #{err}
+      //- input#file(type="file" value="Choose files" name="files" accept="image/jpeg,image/png" multiple="true" hidden)
+      //- label.upload-file-label.waves-effect.black.btn(for="file") Choose Files
+      //- span(id="file-chosen") No file chosen
+      //- button.waves-effect.black.btn Submit
+
+      .field__wrapper
+        input#file.field.field__file(name='files', type='file', accept="image/jpeg,image/png" multiple="true")
+        label.field__file-wrapper(for='file')
+          .field__file-fake No files chosen
+          .field__file-button Choose Files
+      
+      button.waves-effect.black.btn Submit
+
+    if(err)
+      p.error-message #{err}

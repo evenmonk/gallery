@@ -11,6 +11,8 @@ router.post('/', function(req, res) {
     const login = req.body.login;
     const pass = req.body.pass;
 
+    console.log(`login ${login}, ${pass} `) 
+
     let err;
     if (!login || !pass) {
         err = 'All fields must be filled'

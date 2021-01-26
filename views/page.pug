@@ -6,7 +6,7 @@ block content
     each image in images
       section.img-container(id= i++, data-href= image.fullImage, tabindex=0)
         img.min-img(src = image.minImage, alt = image.alt)
-  footer.page-footer
+  footer.pics-page-footer
     section.switch-pages
       if currentPage > 1
         a.switch-page(href=`/pages/${currentPage - 1}`) Back

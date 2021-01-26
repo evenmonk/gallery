@@ -14,7 +14,7 @@ router.post('/', function(req, res, next) {
     console.log(req.body)
 
     const error = findErrorInFields(login, pass, rePass);
-    if (error) res.render('register', { err: error.message, login: error.login, pass: error.pass, rePass: error.rePass });
+    if (error) res.render('register', { error: error.message, login: error.login, pass: error.pass, rePass: error.rePass });
     else {
         User.findOne({ login: login }, function(err, user) {
             if (err) console.log(err);
