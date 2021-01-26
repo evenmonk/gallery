@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  form.upload-form(method="POST" enctype="multipart/form-data" name="fileinfo" id="fileinfo" )
+    input#file(type="file" value="Choose files" name="files" accept="image/jpeg,image/png" 
+    multiple="true" hidden)
+    label.upload-file-label(for="file") Choose Files
+    span(id="file-chosen") No file chosen
+    button Submit
+
+  if(err)
+    p.error-message #{err}

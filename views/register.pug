@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  if(userLogin)
+    p You're already registered
+  else
+    h1 Welcome!
+    main.register-content
+      form.register-form(action="/register" method="POST")
+        b Username
+        input.login.text(type="text" placeholder="Enter Username" name="sign-up-login" value=login style="margin-bottom: 5px")
+        b Password
+        input.pass.text(type="password" placeholder="Enter Password" name="sign-up-pass" value=pass)
+        input.rePass.text(type="password" placeholder="Repeat your password" name="sign-up-rePass" value=rePass)
+        input.submit(type="submit" value="Register" style="margin-top: 10px")
+      if(err)
+        p.error-message #{err}
+      
